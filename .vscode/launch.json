@@ -1,0 +1,13 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch frogzlab",
+			"type": "chrome",
+			"request": "launch",
+			"file": "${workspaceRoot}/index2.html",
+            "jshint.enabled": true
+		}
+		
+	]
+}
