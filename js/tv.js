@@ -193,41 +193,41 @@ $().ready(function () {
         Globals.videos = [];
         loadChannel(Globals.channels[Globals.cur_chan].channel, null);
     });
-    $(document).keydown(function (e) {
-        if (!$(e.target).is('form>*')) {
-            var keyCode = e.keyCode || e.which, arrow = { left: 37, up: 38, right: 39, down: 40 };
-            switch (keyCode) {
-                case arrow.left: case 72: // h
-                    loadVideo('prev');
-                    break;
-                case arrow.up: case 75: // k
-                    chgChan('up');
-                    break;
-                case arrow.right: case 76: // l
-                    loadVideo('next');
-                    break;
-                case arrow.down: case 74: // j
-                    chgChan('down');
-                    break;
-                case 32:
-                    togglePlay();
-                    break;
-                case 70:
-                    $('#fill').attr('checked', true);
-                    fillScreen();
-                    break;
-                case 27:
-                    if ($('#fill').is(':checked')) {
-                        fillScreen();
-                    }
-                    break;
-                case 67:
-                    window.open($('#video-title>a').attr('href'), '_blank');
-                    break;
-            }
-            return false;
-        }
-    });
+    // $(document).keydown(function (e) {
+    //     if (!$(e.target).is('form>*')) {
+    //         var keyCode = e.keyCode || e.which, arrow = { left: 37, up: 38, right: 39, down: 40 };
+    //         switch (keyCode) {
+    //             case arrow.left: case 72: // h
+    //                 loadVideo('prev');
+    //                 break;
+    //             case arrow.up: case 75: // k
+    //                 chgChan('up');
+    //                 break;
+    //             case arrow.right: case 76: // l
+    //                 loadVideo('next');
+    //                 break;
+    //             case arrow.down: case 74: // j
+    //                 chgChan('down');
+    //                 break;
+    //             case 32:
+    //                 togglePlay();
+    //                 break;
+    //             case 70:
+    //                 $('#fill').attr('checked', true);
+    //                 fillScreen();
+    //                 break;
+    //             case 27:
+    //                 if ($('#fill').is(':checked')) {
+    //                     fillScreen();
+    //                 }
+    //                 break;
+    //             case 67:
+    //                 window.open($('#video-title>a').attr('href'), '_blank');
+    //                 break;
+    //         }
+    //         return false;
+    //     }
+    // });
 
     $(window).resize(function () {
         resizePlayer();
@@ -961,23 +961,23 @@ function addListeners(type) {
     }
 }
 
-function fillScreen() {
-    var $object, $fill, $filloverlay, fill_screen_domains = ['youtube.com', 'youtu.be'];
-    if (fill_screen_domains.indexOf(Globals.videos[Globals.cur_chan].video[Globals.cur_video].domain) !== -1) {
-        $object = $('#video-embed embed');
-        $fill = $('#fill');
-        $filloverlay = $('#fill-overlay');
-        if ($object.hasClass('fill-screen')) {
-            $fill.attr('checked', false);
-            $object.removeClass('fill-screen');
-            $filloverlay.css('display', 'none');
-        } else if ($fill.is(':checked')) {
-            $fill.attr('checked', true);
-            $object.addClass('fill-screen');
-            $filloverlay.css('display', 'block');
-        }
-    }
-}
+// function fillScreen() {
+//     var $object, $fill, $filloverlay, fill_screen_domains = ['youtube.com', 'youtu.be'];
+//     if (fill_screen_domains.indexOf(Globals.videos[Globals.cur_chan].video[Globals.cur_video].domain) !== -1) {
+//         $object = $('#video-embed embed');
+//         $fill = $('#fill');
+//         $filloverlay = $('#fill-overlay');
+//         if ($object.hasClass('fill-screen')) {
+//             $fill.attr('checked', false);
+//             $object.removeClass('fill-screen');
+//             $filloverlay.css('display', 'none');
+//         } else if ($fill.is(':checked')) {
+//             $fill.attr('checked', true);
+//             $object.addClass('fill-screen');
+//             $filloverlay.css('display', 'block');
+//         }
+//     }
+// }
 
 // function resizePlayer() {
 //     if(typeof(Globals.cur_chan) == 'undefined' ||

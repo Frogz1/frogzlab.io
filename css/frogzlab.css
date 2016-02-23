@@ -4,4 +4,8 @@
 }
 .list-group-item:hover{
     cursor: pointer;
+    background-color:#df691a;
+}
+#channel-name{
+ z-index: 99;   
 }
